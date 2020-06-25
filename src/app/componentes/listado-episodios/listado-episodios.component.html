@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+
+    <button mat-button (click)="cambiarSerie('bb')">Breaking bad</button>
+    <button mat-button (click)="cambiarSerie('bcs')">Better call saul</button>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+
+
+
+
+
+<table mat-table [dataSource]="listado" class="mat-elevation-z8">
+
+  
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre episodio </th>
+      <td mat-cell *matCellDef="let element"> {{element.title | uppercase}}  <button mat-raised-button color="primary" style="margin-right:5px;" (click)="verDetalle(element)">Detalle</button>   </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="temporada">
+      <th mat-header-cell *matHeaderCellDef> Temporada </th>
+      <td mat-cell *matCellDef="let element"> {{element.season}} </td>
+    </ng-container>
+
+
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+  
+  </table>
+
+  <app-detalles-episodios [episodio] = "episodio"> </app-detalles-episodios>
+
+

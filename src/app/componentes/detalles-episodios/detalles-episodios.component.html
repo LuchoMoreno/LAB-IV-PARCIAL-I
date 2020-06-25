@@ -1,0 +1,23 @@
+<div *ngIf="episodio !=null">
+
+    <mat-card class="example-card">
+
+        <mat-card-header>
+        <h2>DETALLES DEL EPISODIO</h2>
+        </mat-card-header>
+
+        <mat-card-content>
+        <h2>Temporada: {{episodio.season}}</h2>
+        <h2>Titulo: {{episodio.title}}</h2>
+        <h2>Fecha de salida: {{episodio.air_date | date:"MM/dd/yy"}}</h2> <!-- ACÁ UTILIZO UN PIPE DE FECHA-->
+        <h2>Algunos personajes: {{episodio.characters[0]}}, {{episodio.characters[1]}} , {{episodio.characters[2]}}, {{episodio.characters[3]}}</h2>
+
+        </mat-card-content>
+
+      </mat-card>
+      
+
+</div>
+ 
+
+
